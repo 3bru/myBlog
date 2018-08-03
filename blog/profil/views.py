@@ -3,14 +3,15 @@ from profil.models import Posts
 
 
 def home(request):
-    text=Posts.objects.all()
+    posts=Posts.objects.all()
     return render(request, 'home.html',{
-        'title': 'ilkyazı',
-        'posts': 'icerik',
+        'posts':posts,
+    })
+def content(request, id):
+    content = Posts.objects.get(id=id)
+    return render(request, 'content.html' ,{
+    'content':content,
     })
 
 def about(request):
     return render(request, 'about.html')
-
-def connect(request):
-    return render(request, 'connect.html')
