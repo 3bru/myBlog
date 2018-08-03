@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+<div>
+    <h1><a href="/">Ebru ARSLAN</a></h1>
+</div>
+{% block content %}
+  <h2>HİKAYELER</h2>
+    {% for post in posts %}
+      <a href=/posts/>{{ post }}</a><br/>
+  {% endfor %}
+{% endblock %}
